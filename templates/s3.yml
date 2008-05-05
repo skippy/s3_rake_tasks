@@ -1,0 +1,20 @@
+--- 
+# please enter your two AWS S3 specific keys here.
+aws_access_key: '<Your Access Key Here />'
+aws_secret_access_key: '<Your Top-Secret access key here />'
+options: 
+  use_ssl: true  #set to true or false depending on whether you want your data to be encrypted on its way to S3
+  persistent: true #keep the conn open for a little bit to S3.  See AWS::S3 for more details
+  
+# if you want your backups to be encrypted with gnupg, enter the public key here...
+#NOTE: make sure you have the '|+', as in 'public_encryption_key: |+', 
+# otherwise the public key will get munged together, new lines will be ignored
+# and the key won't work
+#public_encryption_key: |+
+#<public key here>
+
+# signing is a bit more complicated.  If you want to sign your backup, as in saying I KNOW it came from this server,
+# you need to sign it with a private key on your application server(s).  Please give the gnupg name of the key you want
+# to sign with
+#private_signing_key_name: '<private gnupg key name here>'
+
